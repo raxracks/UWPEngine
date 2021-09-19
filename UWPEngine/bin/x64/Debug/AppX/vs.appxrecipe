@@ -10,7 +10,7 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>4e22eb0d-4d4a-4149-8bc0-1c05841ba024</PackageIdentityName>
     <PackageIdentityPublisher>CN=D22F462A-B36B-4000-9EB3-FAD2B8F0F108</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\watso\source\repos\UWPEngine\UWPEngine\obj\x64\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\obj\x64\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,8 +18,8 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\watso\source\repos\UWPEngine\UWPEngine\bin\x64\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>2147476A417052183EBE363DADBBFC0879257C58404C7C0A0AD055537C59099D</RegisteredManifestChecksum>
+    <LayoutDir>C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\bin\x64\Debug\AppX</LayoutDir>
+    <RegisteredManifestChecksum>300F6C5CBCCBBB9DE9566EC98447BBD91B8001C2964F3AE322189FD5C44163FE</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>20572racksstuff.Clickthecookie_1.0.24.0_x64__bt38dyqtn9fye</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>20572racksstuff.Clickthecookie_bt38dyqtn9fye!App</RegisteredUserModeAppID>
     <RegisteredPackageID>20572racksstuff.Clickthecookie</RegisteredPackageID>
@@ -27,16 +27,16 @@
     <RegisteredVersion>1.0.24.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\bin\x64\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-09-17T18:02:21.703</Modified>
+      <Modified>2021-09-19T10:16:47.407</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\bin\x64\Debug\UWPEngine.exe">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\bin\x64\Debug\UWPEngine.exe">
       <PackagePath>entrypoint\UWPEngine.exe</PackagePath>
-      <Modified>2021-09-17T18:02:20.191</Modified>
+      <Modified>2021-09-19T10:16:46.689</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\watso\.nuget\packages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -494,151 +494,99 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2016-06-12T05:15:04.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\watso\.nuget\packages\win2d.uwp\1.26.0\runtimes\win10-x64\native\Microsoft.Graphics.Canvas.dll">
+      <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
+      <Modified>2021-04-28T19:55:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\watso\.nuget\packages\win2d.uwp\1.26.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
+      <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
+      <Modified>2021-04-28T19:54:02.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.17763.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
       <Modified>2018-10-23T08:33:40.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\bgBlue.jpg">
-      <PackagePath>Assets\GameAssets\bgBlue.jpg</PackagePath>
-      <Modified>2021-09-17T07:20:51.510</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\storeTile.jpg">
-      <PackagePath>Assets\GameAssets\storeTile.jpg</PackagePath>
-      <Modified>2021-09-17T07:20:51.512</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\cookie.png">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\Assets\GameAssets\cookie.png">
       <PackagePath>Assets\GameAssets\cookie.png</PackagePath>
       <Modified>2021-09-17T07:20:51.511</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\GamepadIcons\A.png">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\Assets\GameAssets\GamepadIcons\A.png">
       <PackagePath>Assets\GameAssets\GamepadIcons\A.png</PackagePath>
       <Modified>2021-09-17T07:20:51.499</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\GamepadIcons\B.png">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\Assets\GameAssets\GamepadIcons\B.png">
       <PackagePath>Assets\GameAssets\GamepadIcons\B.png</PackagePath>
       <Modified>2021-09-17T07:20:51.500</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\GamepadIcons\X.png">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\Assets\GameAssets\GamepadIcons\X.png">
       <PackagePath>Assets\GameAssets\GamepadIcons\X.png</PackagePath>
       <Modified>2021-09-17T07:20:51.501</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\GamepadIcons\Y.png">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\Assets\GameAssets\GamepadIcons\Y.png">
       <PackagePath>Assets\GameAssets\GamepadIcons\Y.png</PackagePath>
       <Modified>2021-09-17T07:20:51.501</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\panelVertical.png">
-      <PackagePath>Assets\GameAssets\panelVertical.png</PackagePath>
-      <Modified>2021-09-17T07:20:51.512</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\StoreIcons\alchemy_lab_icon.png">
-      <PackagePath>Assets\GameAssets\StoreIcons\alchemy_lab_icon.png</PackagePath>
-      <Modified>2021-09-17T07:20:51.502</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\StoreIcons\bank_icon.png">
-      <PackagePath>Assets\GameAssets\StoreIcons\bank_icon.png</PackagePath>
-      <Modified>2021-09-17T07:20:51.502</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\StoreIcons\cursor_icon.png">
-      <PackagePath>Assets\GameAssets\StoreIcons\cursor_icon.png</PackagePath>
-      <Modified>2021-09-17T07:20:51.503</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\StoreIcons\factory_icon.png">
-      <PackagePath>Assets\GameAssets\StoreIcons\factory_icon.png</PackagePath>
-      <Modified>2021-09-17T07:20:51.504</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\StoreIcons\farm_icon.png">
-      <PackagePath>Assets\GameAssets\StoreIcons\farm_icon.png</PackagePath>
-      <Modified>2021-09-17T07:20:51.504</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\StoreIcons\grandma_icon.png">
-      <PackagePath>Assets\GameAssets\StoreIcons\grandma_icon.png</PackagePath>
-      <Modified>2021-09-17T07:20:51.506</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\StoreIcons\mine_icon.png">
-      <PackagePath>Assets\GameAssets\StoreIcons\mine_icon.png</PackagePath>
-      <Modified>2021-09-17T07:20:51.506</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\StoreIcons\money.png">
-      <PackagePath>Assets\GameAssets\StoreIcons\money.png</PackagePath>
-      <Modified>2021-09-17T07:20:51.507</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\StoreIcons\shipment_icon.png">
-      <PackagePath>Assets\GameAssets\StoreIcons\shipment_icon.png</PackagePath>
-      <Modified>2021-09-17T07:20:51.507</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\StoreIcons\temple_icon.png">
-      <PackagePath>Assets\GameAssets\StoreIcons\temple_icon.png</PackagePath>
-      <Modified>2021-09-17T07:20:51.508</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\StoreIcons\wizard_tower_icon.png">
-      <PackagePath>Assets\GameAssets\StoreIcons\wizard_tower_icon.png</PackagePath>
-      <Modified>2021-09-17T07:20:51.508</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2021-09-17T17:45:34.404</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-09-17T17:45:34.407</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-09-17T17:45:34.416</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-09-17T17:45:34.410</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-09-17T17:45:34.413</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-09-17T17:45:34.419</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2021-09-17T17:45:34.422</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Assets\GameAssets\Data\store_items.txt">
-      <PackagePath>Assets\GameAssets\Data\store_items.txt</PackagePath>
-      <Modified>2021-09-17T07:20:51.499</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2021-09-17T07:20:51.663</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\bin\x64\Debug\UWPEngine.xr.xml">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\bin\x64\Debug\UWPEngine.xr.xml">
       <PackagePath>UWPEngine.xr.xml</PackagePath>
-      <Modified>2021-09-17T17:51:36.218</Modified>
+      <Modified>2021-09-17T21:23:10.514</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\bin\x64\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-09-17T18:02:20.089</Modified>
+      <Modified>2021-09-19T10:16:46.586</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\bin\x64\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-09-17T18:02:20.089</Modified>
+      <Modified>2021-09-19T10:16:46.586</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2018-10-23T07:44:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\bin\x64\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-09-17T18:02:21.317</Modified>
+      <Modified>2021-09-19T10:14:59.714</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine\UWPEngine\bin\x64\Debug\Core\UWPEngine.exe">
+    <AppxPackagedFile Include="C:\Users\watso\source\repos\UWPEngine-Win2D\UWPEngine\bin\x64\Debug\Core\UWPEngine.exe">
       <PackagePath>UWPEngine.exe</PackagePath>
-      <Modified>2021-09-17T18:02:21.699</Modified>
+      <Modified>2021-09-19T10:16:47.402</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\watso\\source\\repos\\UWPEngine\\UWPEngine\\UWPEngine.csproj": {}
+    "C:\\Users\\watso\\source\\repos\\UWPEngine-Win2D\\UWPEngine\\UWPEngine.csproj": {}
   },
   "projects": {
-    "C:\\Users\\watso\\source\\repos\\UWPEngine\\UWPEngine\\UWPEngine.csproj": {
+    "C:\\Users\\watso\\source\\repos\\UWPEngine-Win2D\\UWPEngine\\UWPEngine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\watso\\source\\repos\\UWPEngine\\UWPEngine\\UWPEngine.csproj",
+        "projectUniqueName": "C:\\Users\\watso\\source\\repos\\UWPEngine-Win2D\\UWPEngine\\UWPEngine.csproj",
         "projectName": "UWPEngine",
-        "projectPath": "C:\\Users\\watso\\source\\repos\\UWPEngine\\UWPEngine\\UWPEngine.csproj",
+        "projectPath": "C:\\Users\\watso\\source\\repos\\UWPEngine-Win2D\\UWPEngine\\UWPEngine.csproj",
         "packagesPath": "C:\\Users\\watso\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\watso\\source\\repos\\UWPEngine\\UWPEngine\\obj\\",
+        "outputPath": "C:\\Users\\watso\\source\\repos\\UWPEngine-Win2D\\UWPEngine\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -44,6 +44,10 @@
             "Microsoft.NETCore.UniversalWindowsPlatform": {
               "target": "Package",
               "version": "[6.2.8, )"
+            },
+            "Win2D.uwp": {
+              "target": "Package",
+              "version": "[1.26.0, )"
             }
           }
         }

@@ -8,20 +8,24 @@ using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Imaging;
-using Windows.UI.Xaml.Shapes;
+using Microsoft.Graphics.Canvas;
+using Microsoft.Graphics.Canvas.UI.Xaml;
+using System.Numerics;
+using Microsoft.Graphics.Canvas.Text;
 
 namespace UWPEngine
 {
     public class Engine
     {
-        Canvas ctx;
+        CanvasAnimatedControl ctx;
         Grid grid;
+        CanvasDrawingSession cds;
+
         private Gamepad _Gamepad = null;
         bool gamepadConnected = false;
         List<Windows.System.VirtualKey> keys = new List<Windows.System.VirtualKey>();
 
-        public Engine(Canvas canvas, Grid grid)
+        public Engine(CanvasAnimatedControl canvas, Grid grid)
         {
             this.grid = grid;
             ctx = canvas;
@@ -30,6 +34,21 @@ namespace UWPEngine
             Gamepad.GamepadRemoved += Gamepad_GamepadRemoved;
             Window.Current.CoreWindow.KeyDown += CoreWindow_KeyDown;
             Window.Current.CoreWindow.KeyUp += CoreWindow_KeyUp;
+        }
+
+        private bool DrawingSessionClosed()
+        {
+            if (cds == null) return true;
+
+            try
+            {
+                cds.DrawLine(new Vector2(0, 0), new Vector2(0, 0), Colors.White);
+                return false;
+            }
+            catch
+            {
+                return true;
+            }
         }
 
         private void CoreWindow_KeyDown(CoreWindow sender, KeyEventArgs args)
@@ -61,77 +80,85 @@ namespace UWPEngine
 
         public void Rect(double x, double y, double width, double height, Color color, double rotation = 0)
         {
-            RotateTransform rotateTransform = new RotateTransform();
-            rotateTransform.Angle = rotation;
-            Rectangle rect = new Rectangle();
-            rect.Stroke = new SolidColorBrush(color);
-            rect.Fill = new SolidColorBrush(color);
+            if (DrawingSessionClosed()) return;
+
+            Rect rect = new Rect();
             rect.Width = width;
             rect.Height = height;
-            Canvas.SetLeft(rect, x);
-            Canvas.SetTop(rect, y);
-            rect.RenderTransform = rotateTransform;
+            rect.X = x;
+            rect.Y = y;
 
-            ctx.Children.Add(rect);
+            cds.FillRectangle(rect, color);
         }
 
-        public void UnfilledRect(double x, double y, double width, double height, Color color, double rotation = 0, double thickness = 0, double border_radius = 0)
+        public void SetDrawingSession(CanvasDrawingSession drawingSession)
         {
-            RotateTransform rotateTransform = new RotateTransform();
-            rotateTransform.Angle = rotation;
-            Rectangle rect = new Rectangle();
-            rect.Stroke = new SolidColorBrush(color);
-            rect.Fill = null;
+            cds = drawingSession;
+        }
+
+        public void UnfilledRect(double x, double y, double width, double height, Color color, double rotation = 0, float thickness = 1, float border_radius = 0)
+        {
+            if (DrawingSessionClosed()) return;
+
+            Rect rect = new Rect();
             rect.Width = width;
             rect.Height = height;
-            rect.StrokeThickness = thickness;
-            rect.RadiusX = border_radius;
-            rect.RadiusY = border_radius;
-            Canvas.SetLeft(rect, x);
-            Canvas.SetTop(rect, y);
-            rect.RenderTransform = rotateTransform;
+            rect.X = x;
+            rect.Y = y;
 
-            ctx.Children.Add(rect);
+            cds.DrawRoundedRectangle(rect, border_radius, border_radius, Color.FromArgb(color.A, color.R, color.G, color.B), thickness);
         }
 
-        public void Text(double x, double y, string text, int fontSize, Color color, bool manualWidth = false, double width = 0, Windows.UI.Xaml.TextAlignment textAlignment = Windows.UI.Xaml.TextAlignment.Left)
+        public void Text(float x, float y, string text, float fontSize, Color color, CanvasHorizontalAlignment textAlignment = CanvasHorizontalAlignment.Left, double width = double.PositiveInfinity)
         {
-            TextBlock textBlock = new TextBlock();
-            textBlock.Text = text;
-            textBlock.FontSize = fontSize;
-            textBlock.Foreground = new SolidColorBrush(color);
-            if (manualWidth)
+            if (DrawingSessionClosed()) return;
+
+            CanvasTextFormat format = new CanvasTextFormat { FontSize = fontSize, WordWrapping = CanvasWordWrapping.NoWrap, HorizontalAlignment = textAlignment };
+
+            Rect rect = new Rect();
+            rect.X = x;
+            rect.Y = y;
+            rect.Width = width;
+
+            if (width < double.PositiveInfinity)
             {
-                textBlock.Width = width;
+                switch (textAlignment)
+                {
+                    case CanvasHorizontalAlignment.Center:
+                        rect.X = x + (width / 2) - (GetStringSizePX(text, fontSize, textAlignment).Width / 2);
+                        break;
+
+                    case CanvasHorizontalAlignment.Right:
+                        rect.X = x + width - GetStringSizePX(text, fontSize, textAlignment).Width;
+                        break;
+
+                    default:
+                        break;
+                }
             }
 
-            textBlock.HorizontalTextAlignment = textAlignment;
-
-            Canvas.SetLeft(textBlock, x);
-            Canvas.SetTop(textBlock, y);
-
-            ctx.Children.Add(textBlock);
+            cds.DrawText(text, rect, color, new CanvasTextFormat() { FontSize = fontSize });
         }
 
-        public Size GetStringSizePX(string text, int fontSize)
+        public Rect GetStringSizePX(string text, float fontSize, CanvasHorizontalAlignment textAlignment = CanvasHorizontalAlignment.Left)
         {
-            var tb = new TextBlock { Text = text, FontSize = fontSize };
-            tb.Measure(new Size(Double.PositiveInfinity, Double.PositiveInfinity));
-            return tb.DesiredSize;
-        }
+            if (DrawingSessionClosed()) return new Rect();
 
-        private ImageSource GetImageSource(string imagePath)
-        {
-            BitmapImage glowIcon = new BitmapImage();
+            CanvasTextFormat format = new CanvasTextFormat { FontSize = fontSize, WordWrapping = CanvasWordWrapping.NoWrap, HorizontalAlignment = textAlignment };
 
-            glowIcon.UriSource = new Uri("ms-appx:///Assets/GameAssets/" + imagePath);
+            var textLayout = new CanvasTextLayout(cds, text, format, 0.0f, 0.0f)
+            {
+                WordWrapping = CanvasWordWrapping.NoWrap
+            };
 
-            return glowIcon;
+            Rect rect = textLayout.LayoutBounds;
+
+            return rect;
         }
 
         public struct EngineTexture
         {
-            public ImageBrush imgBrush;
+            public CanvasBitmap image;
         }
 
         public struct BoundingBox
@@ -168,33 +195,26 @@ namespace UWPEngine
         /// </summary>
         /// <param name="GenerateTexture"></param>
         /// <returns>EngineTexture</returns>
-        public EngineTexture GenerateTexture(string imagePath, Stretch stretchMethod)
+        public async Task<EngineTexture> GenerateTexture(string imagePath, Stretch stretchMethod)
         {
             EngineTexture engineTexture = new EngineTexture();
-            ImageBrush imgBrush = new ImageBrush();
-            imgBrush.Stretch = stretchMethod;
-            imgBrush.ImageSource = GetImageSource(imagePath);
-            engineTexture.imgBrush = imgBrush;
+            CanvasBitmap bitmap = await CanvasBitmap.LoadAsync(ctx, "Assets/GameAssets/" + imagePath);
+            engineTexture.image = bitmap;
+
             return engineTexture;
         }
 
-        public void TexturedRect(double x, double y, double width, double height, EngineTexture texture, double rotation = 0, double border_radius = 0)
+        public void TexturedRect(float x, float y, double width, double height, EngineTexture texture, double rotation = 0, double border_radius = 0)
         {
-            RotateTransform rotateTransform = new RotateTransform();
-            rotateTransform.Angle = rotation;
-            rotateTransform.CenterX = width / 2;
-            rotateTransform.CenterY = height / 2;
-            Rectangle rect = new Rectangle();
-            rect.Fill = texture.imgBrush;
+            if (DrawingSessionClosed() || texture.image == null) return;
+
+            Rect rect = new Rect();
             rect.Width = width;
             rect.Height = height;
-            rect.RadiusX = border_radius;
-            rect.RadiusY = border_radius;
-            Canvas.SetLeft(rect, x);
-            Canvas.SetTop(rect, y);
-            rect.RenderTransform = rotateTransform;
+            rect.X = x;
+            rect.Y = y;
 
-            ctx.Children.Add(rect);
+            cds.DrawImage(texture.image, rect);
         }
 
         public async Task<string> GetKeyboardInputAsync()
@@ -245,8 +265,9 @@ namespace UWPEngine
 
         public void Clear(Color color)
         {
-            ctx.Children.Clear();
-            ctx.Background = new SolidColorBrush(color);
+            if (DrawingSessionClosed()) return;
+
+            cds.Clear(color);
         }
 
         public struct GamepadData

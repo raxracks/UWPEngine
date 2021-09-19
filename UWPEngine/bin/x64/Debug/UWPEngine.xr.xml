@@ -12,8 +12,11 @@
       <RootProperty Name="Background" />
       <RootProperty Name="Children" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Canvas">
-      <RootProperty Name="Name" />
+    <RootType FullName="Microsoft.Graphics.Canvas.UI.Xaml.CanvasAnimatedControl">
+      <RootProperty Name="ClearColor" />
+      <RootEvent Name="CreateResources" />
+      <RootEvent Name="Draw" />
+      <RootEvent Name="Update" />
     </RootType>
     <RootType FullName="UWPEngine.MainPage" />
   </Roots.RootTypes>

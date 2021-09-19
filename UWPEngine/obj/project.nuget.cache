@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OwLTxw/ZoQUEQKaS1dOuR8uXylJcz9atBG3LRUQx1vTFIEk7bvwPEt+7WJpKapw3763PzaBxI1YQvj9SttN0WQ==",
+  "dgSpecHash": "K0h8CH4nJc/i7kKgiPgoFGRU5G0QNWYEbL9MtYKRGBPUXyxY/kFe1vyZY9lo9YHKac2fep1sQuKbPDY4QOk1HA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\watso\\source\\repos\\UWPEngine\\UWPEngine\\UWPEngine.csproj",
+  "projectFilePath": "C:\\Users\\watso\\source\\repos\\UWPEngine-Win2D\\UWPEngine\\UWPEngine.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\watso\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.net.native.compiler\\1.7.6\\microsoft.net.native.compiler.1.7.6.nupkg.sha512",
@@ -176,7 +176,8 @@
     "C:\\Users\\watso\\.nuget\\packages\\system.xml.readerwriter\\4.0.11\\system.xml.readerwriter.4.0.11.nupkg.sha512",
     "C:\\Users\\watso\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
     "C:\\Users\\watso\\.nuget\\packages\\system.xml.xmldocument\\4.0.1\\system.xml.xmldocument.4.0.1.nupkg.sha512",
-    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\system.xml.xmlserializer\\4.0.11\\system.xml.xmlserializer.4.0.11.nupkg.sha512"
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\system.xml.xmlserializer\\4.0.11\\system.xml.xmlserializer.4.0.11.nupkg.sha512",
+    "C:\\Users\\watso\\.nuget\\packages\\win2d.uwp\\1.26.0\\win2d.uwp.1.26.0.nupkg.sha512"
   ],
   "logs": []
 }
