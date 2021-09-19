@@ -1,4 +1,5 @@
-# Cookie Clicker UWP App
-Created this because I was bored, made some slow and bad canvas engine.
+# UWPEngine
+Ported from canvas to Win2D, acceptable performance now
 
-This is old because I forgot to push a big update and then reset my pc bruh
+# Instructions
+Just clone the repo and open the solution, the code is in MainWindow.xaml.cs
